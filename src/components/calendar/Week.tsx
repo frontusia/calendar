@@ -6,14 +6,14 @@ import DayEmpty from '@/components/calendar/DayEmpty';
 import styles from '../../assets/stylesheets/common.css?module';
 
 interface Props {
-  days: Array<number>
+  days: any
 }
 
 @Component
 export default class Week extends VueComponent<Props> {
 
     @Prop()
-    private days!: Array<number>;
+    private days!: any;
 
     render() {
         const days = this.days.map((day: Number) => {

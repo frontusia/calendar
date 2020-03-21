@@ -1,7 +1,6 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {VueComponent} from '../../shims-vue';
 
-import TheInput from '@/components/base/TheInput';
 import TaskList from '@/components/tasks/TaskList';
 import TheHeader from '@/components/base/TheHeader';
 
@@ -15,6 +14,7 @@ export default class Tasks extends VueComponent {
         if (value.length > 0) {
             this.addToList(value);
             this.scrollToEnd();
+            this.value = '';
         }
     }
 
@@ -39,9 +39,14 @@ export default class Tasks extends VueComponent {
             <div class={styles.task_list}>
                 <TheHeader header={'События'} />
 
-                <TheInput v-model={this.value}
-                          onEnter={this.onEnter}
-                          class={styles.input_task}
+                <input v-model={this.value}
+                       onkeypress={(event: any) => {
+                           if (event.key === "Enter") {
+                               this.onEnter(this.value);
+                           }
+                       }}
+                       placeholder='Текст задачи'
+                       class={styles.input_task}
                 />
 
                 <TaskList />

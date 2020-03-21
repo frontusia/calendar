@@ -7,9 +7,12 @@ import TheHeader from '@/components/base/TheHeader';
 
 @Component
 export default class Calendar extends VueComponent {
-
     getMonth() {
-        const months = {
+        interface Months {
+            [key: number]: String;
+        }
+
+        const months:Months = {
             1: 'Январь',
             2: 'Февраль',
             3: 'Март',

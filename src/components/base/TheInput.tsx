@@ -1,12 +1,11 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import {VueComponent} from '../../shims-vue';
 
-
 @Component
 export default class TheInput extends VueComponent {
     value = '';
 
-    onInput(evt: Object) {
+    onInput(evt: any) {
         this.$emit('input', evt.target.value);
     }
 

@@ -25,7 +25,9 @@ export default class TaskList extends VueComponent {
     }
 
     render() {
-        const list = this.tasks.map(({name, checked, index}) => {
+        const list = this.tasks.map((value: any) => {
+            const {name, checked, index}:any = value;
+
             const id = `${index}_${name}`;
 
             return <div>

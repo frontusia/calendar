@@ -10,29 +10,28 @@ export default new Vuex.Store({
         calendar: {},
     },
     getters: {
-        getCurrentDay (state) {
+        getCurrentDay (state: any) {
             return state.activeDay;
         },
-        getTasks(state) {
-            return (day) => {
-                console.log('get tasks', state, day, state.calendar[day]);
+        getTasks(state: any) {
+            return (day: any) => {
                 return state.calendar[day];
             }
         },
-        getTaskCount(state) {
-            return (day) => {
+        getTaskCount(state: any) {
+            return (day: any) => {
                 return state.calendar[day].length;
             }
         }
     },
     mutations: {
-        CREATE_CALENDAR(state, data) {
+        CREATE_CALENDAR(state: any, data) {
             state.calendar = data;
         },
-        SET_CURRENT_DAY(state, day) {
+        SET_CURRENT_DAY(state: any, day) {
             state.activeDay = day;
         },
-        ADD_TASK(state, {day, task}) {
+        ADD_TASK(state: any, {day, task}) {
             const length = state.calendar[day].length;
 
             const data = {
@@ -43,7 +42,7 @@ export default new Vuex.Store({
 
             state.calendar[day].push(data);
         },
-        TASK_CHECKED(state, {day, index, checked}) {
+        TASK_CHECKED(state: any, {day, index, checked}) {
             state.calendar[day] = state.calendar[day].map((value: any) => {
                 let newValue = value;
 
@@ -57,7 +56,11 @@ export default new Vuex.Store({
     },
     actions: {
         createCalendar({commit}, {days}) {
-            let obj = {};
+            interface Calendar {
+                [key: number]: any;
+            }
+
+            let obj: Calendar = {};
 
             for (let i = 1; i <= days; i++) {
                 obj[i] = [];
