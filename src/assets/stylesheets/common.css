@@ -1,9 +1,6 @@
-p {
-    color: red;
-}
-
 .header {
     color: #6e6e74;
+    font-size: 21px;
     text-align: left;
     font-weight: 600;
     margin: 20px 10px 10px;
@@ -14,29 +11,31 @@ p {
 }
 
 html, body {
-    height:100%;
-    margin:0;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    background: #f6f6f7;
+    background: linear-gradient(145deg, #ebff8f, #8ffff6, #ff8fcc);;
     display: flex;
 }
 
 .block {
-    padding: 10px 10px 30px;
+    padding: 17px 17px 30px;
     margin: 20px;
     flex-grow: 1;
     width: 260px;
     border-radius: 10px;
-    background: linear-gradient(145deg, #fff, #eee);
-    box-shadow: 32px 32px 44px #ebebe6,
-    -32px -32px 44px #ffffff;
+    background: linear-gradient(145deg, #dbffdb, #e3ff8f);
+    box-shadow: 18px 20px 50px rgba(0, 0, 0, 0.4),
+    -7px -7px 50px rgba(255, 255, 255, 0.5),
+    inset -4px -4px 9px #b67dd6d1,
+    inset 5px 5px 9px #e5ffe6;
 }
 
 .flex_container {
@@ -79,22 +78,39 @@ body {
 }
 
 .today {
-    background: #51b3ff;
+    background: #ff51ae;
     color: white !important;
     font-weight: bold;
 }
 
 .today:hover {
-    background: #3e9ee9;
+    background: #ee3799;
 }
 
 .tasks {
-    color: red;
+    color: #fe51ae;
+    font-weight: 600;
+    position: relative;
+}
+
+.tasks:after {
+    content: '';
+    height: 4px;
+    width: 4px;
+    background: #fe51ae;
+    position: absolute;
+    bottom: 3px;
+    right: 12px;
+    border-radius: 4px;
+}
+
+.today:after {
+    background: white;
 }
 
 .task_list_block {
     margin: 8px;
-    max-height: 180px;
+    max-height: 145px;
     overflow: auto;
     padding-bottom: 20px;
 }
@@ -104,12 +120,19 @@ body {
 }
 
 .input_task {
-    margin: 0px 5px 5px 29px;
+    margin: 0px 5px 5px 10px;
     font-size: 15px;
+    font-family: inherit;
+    padding: 5px 10px;
+    border: 1px solid #fe51ae;
+    border-radius: 15px;
+    width: 210px;
 }
 
 .input_task:focus {
-    outline: #50b3ff solid 2px;
+    outline: transparent;
+    border-color: #50b3ff;
+    box-shadow: 0px 0px 0px 1px #50b3ff;
 }
 
 .week {
@@ -149,7 +172,7 @@ input[type=checkbox] + label {
 }
 
 input[type=checkbox]:checked + label {
-    color: #ccc;
+    color: rgba(17, 16, 16, 0.40);;
     font-style: normal;
     text-decoration: line-through;
 }
