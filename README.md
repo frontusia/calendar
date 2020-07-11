@@ -1,4 +1,17 @@
-# my-project
+# Calendar: Monthly plan
+
+## Technology:
+<ul>
+    <li>
+        vue,vuex
+    </li>
+    <li>
+        JSX, typescript
+    </li>
+    <li>
+        css
+    </li>
+</ul>
 
 ## Project setup
 ```
