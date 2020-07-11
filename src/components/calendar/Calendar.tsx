@@ -40,7 +40,7 @@ export default class Calendar extends VueComponent {
     render() {
         return (
             <div>
-                <TheHeader header={this.getHeader()} />
+                <TheHeader header={this.getHeader()} subtitle={''} />
 
                 <Month/>
             </div>

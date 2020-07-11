@@ -6,6 +6,12 @@
     margin: 20px 10px 10px;
 }
 
+.header > .subtitle {
+    color: #E91E63;
+    font-weight: 300;
+    margin-left: 8px;
+}
+
 .task {
     font-weight: 600;
 }
@@ -22,12 +28,29 @@ body {
     text-align: center;
     color: #2c3e50;
     background: linear-gradient(145deg, #ebff8f, #8ffff6, #ff8fcc);;
-    display: flex;
+}
+
+.main_container {
+    display: grid;
+    grid-template-areas: "calendar" "footer";
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+#Calendar {
+    grid-area: calendar;
+}
+
+#Footer {
+    grid-area: footer;
 }
 
 .block {
     padding: 17px 17px 30px;
-    margin: 20px;
+    margin: 0 15px;
     flex-grow: 1;
     width: 260px;
     border-radius: 10px;
@@ -36,6 +59,10 @@ body {
     -7px -7px 50px rgba(255, 255, 255, 0.5),
     inset -4px -4px 9px #b67dd6d1,
     inset 5px 5px 9px #e5ffe6;
+}
+
+.grid_container {
+    /*display: grid;*/
 }
 
 .flex_container {
@@ -154,7 +181,7 @@ body {
 
     .block {
         padding: 10px 10px 30px;
-        margin: 20px;
+        margin: 0 0 20px;
         flex-grow: 1;
         width: 260px;
         min-height: 200px;

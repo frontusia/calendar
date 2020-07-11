@@ -25,6 +25,10 @@ export default class Month extends VueComponent {
         return moment().daysInMonth();
     }
 
+    getCurrentMonth () {
+        return Number(moment().month());
+    }
+
     genWeek (day: number, days: number) {
         return this.week.map(() => {
             return day <= days ? day++ : null;
@@ -44,7 +48,6 @@ export default class Month extends VueComponent {
         let month = [firstWeek];
 
         for (let d = day; d <= days; d+=7) {
-            console.log('dd:', d);
             month.push(this.genWeek(d, days));
         }
 
@@ -54,12 +57,11 @@ export default class Month extends VueComponent {
     getMonth() {
         const firstDay = this.getFirstDayWeek();
         const dayOfMonth = this.getCountDays();
+        const currentMonth = this.getCurrentMonth();
 
         let month = this.fillZero(firstDay, dayOfMonth);
 
-        this.$store.dispatch('createCalendar', {days: dayOfMonth});
-
-        console.log('month', month);
+        this.$store.dispatch('createCalendar', {days: dayOfMonth, month: currentMonth});
 
         return month;
     }

@@ -22,7 +22,6 @@ export default class Day extends VueComponent<Props> {
     }
 
     handleClick() {
-        console.log('click', this.day);
         this.$store.commit('SET_CURRENT_DAY', this.day);
     }
 
