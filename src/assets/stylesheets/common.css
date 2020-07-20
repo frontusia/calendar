@@ -120,6 +120,10 @@ body {
     position: relative;
 }
 
+.tasks.finished {
+    color: #25aed3;
+}
+
 .tasks:after {
     content: '';
     height: 4px;
@@ -131,7 +135,12 @@ body {
     border-radius: 4px;
 }
 
-.today:after {
+.tasks.finished:after {
+    background: #25aed3;
+}
+
+.today:after,
+.today.finished:after {
     background: white;
 }
 
