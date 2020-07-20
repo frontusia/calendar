@@ -64,7 +64,9 @@ export default new Vuex.Store({
                 }
 
                 return newValue;
-            })
+            });
+
+            updateLocalStorage(activeMonth, state.calendar);
         },
     },
     actions: {
